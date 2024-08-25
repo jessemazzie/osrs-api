@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "osrs-api"
+name = "osrs_api"
 version = "0.1.0"
 description = ""
 authors = ["jessemazzie <jessemazzie1996@gmail.com>"]
@@ -8,6 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+pytest = "^8.3.2"
 
 
 [build-system]
