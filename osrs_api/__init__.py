@@ -12,6 +12,7 @@ if __name__ == "__main__":
 
     ge = grandexchange.GrandExchange()
     print(ge, ge.get_category(1))
+    print(ge.get_items(category_id=1, starting_letter="c", page=1))
 
     # print(
     #     restadapter.call_api("https://secure.runescape.com/m=itemdb_rs/api/info.json")

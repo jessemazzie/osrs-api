@@ -19,3 +19,14 @@ class GrandExchange:
     def get_item(self, item_id):
         url = self.base_url + "catalogue/detail.json?item=" + str(item_id)
         return restadapter.call_api(url)
+
+    def get_items(self, starting_letter: str, page: int, category_id: int = 1):
+        url = self.base_url + "catalogue/items.json?category=" + str(category_id)
+
+        if starting_letter:
+            url += "&alpha=" + starting_letter
+
+        if page:
+            url += "&page=" + str(page)
+        print(url)
+        return restadapter.call_api(url)
