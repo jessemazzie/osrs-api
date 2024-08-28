@@ -1,4 +1,4 @@
-import restadapter
+from . import restadapter
 
 
 class GrandExchange:
