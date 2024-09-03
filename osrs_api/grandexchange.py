@@ -1,4 +1,4 @@
-from . import restadapter
+from osrs_api import restadapter
 
 
 class GrandExchange:

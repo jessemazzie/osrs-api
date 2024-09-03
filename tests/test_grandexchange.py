@@ -17,3 +17,9 @@ def test_get_item():
         item = json.loads(ge.get_item(item_id))["item"]
         print(item)
         assert item["name"] == item_name
+
+
+def test_get_items():
+    ge = grandexchange.GrandExchange()
+    items = json.loads(ge.get_items("c", 1))["items"]
+    print(items)
