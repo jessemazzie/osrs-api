@@ -1,4 +1,4 @@
-from osrs_api import restadapter
+from restadapter import call_api
 
 
 class GrandExchange:
@@ -20,13 +20,13 @@ class GrandExchange:
         if page:
             url += "&page=" + str(page)
 
-        return restadapter.call_api(url)
+        return call_api(url)
 
     def get_item(self, item_id):
         """/api/catalogue/detail.json?item={item_id}
         Gets a single item by its item id."""
         url = self.base_url + "catalogue/detail.json?item=" + str(item_id)
-        return restadapter.call_api(url)
+        return call_api(url)
 
     def get_items(self, starting_letter: str, page: int, category_id: int = 1):
         """/api/catalogue/items.json?category=1&alpha={starting_letter}&page={page}
@@ -40,4 +40,4 @@ class GrandExchange:
         if page:
             url += "&page=" + str(page)
         print(url)
-        return restadapter.call_api(url)
+        return call_api(url)

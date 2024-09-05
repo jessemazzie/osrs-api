@@ -1,6 +1,4 @@
-# url = "https://secure.runescape.com/m=itemdb_oldschool/api/catalogue/items.json?category=1&alpha=c&page=1"
-# response = urllib.request.urlopen(url)
-# print(response.read())
+import json
 
 __all__ = ["grandexchange", "restadapter"]
 
@@ -11,9 +9,8 @@ if __name__ == "__main__":
     import restadapter
 
     ge = grandexchange.GrandExchange()
-    print(ge, ge.get_category(1))
-    print(ge.get_items(category_id=1, starting_letter="c", page=1))
-
+    items = json.loads(ge.get_items("c", 1))["items"]
+    print(items.keys())
     # print(
     #     restadapter.call_api("https://secure.runescape.com/m=itemdb_rs/api/info.json")
     # )
