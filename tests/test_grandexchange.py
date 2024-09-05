@@ -21,5 +21,5 @@ def test_get_item():
 
 def test_get_items():
     ge = grandexchange.GrandExchange()
-    items = json.loads(ge.get_items("c", 1))["items"]
+    items = json.loads(ge.get_items("s", 1))["items"]
     print(items)
